@@ -26,8 +26,9 @@ Kotlin runtime (so it can be run in Java…or at all).
 kotlinc * -include-runtime -d chartools.jar
 ```
 
-It can then be run with `java chartools.jar`, or on some Linux distros it can be
-set to executable (`chmod +x chartools.jar`) and run directly (./chartools.jar).
+It can then be run with `java -jar chartools.jar`, or on some Linux distros it
+can be set to executable (`chmod +x chartools.jar`) and run directly
+(./chartools.jar).
 
 On Windows and MacOS, if it was set up on Java install, you can also
 double-click the jarfile in your file explorer to open/run it.
