@@ -5,14 +5,22 @@ This program is converted and improved from one I wrote in Scala as a way of
 further familiarizing myself with Kotlin, as I'd like to move to Android dev in
 the future.
 
-### Build
+### Put It On Your Computer!
+
+#### From Releases
+
+You can download the straight jarfile for use with in
+[releases](https://github.com/digital-diplomat/CharTools/releases). Or, if you're
+feeling particularly picky, you can build it from source
+
+#### Build From Source
 
 Requires the Kotlin compiler, available via [SDKMAN!](https://sdkman.io) on
 MacOS and Linux, or as a
 [direct download](https://github.com/JetBrains/kotlin/releases/) on all
 platforms.
 
-Quick and easy. Clone the repo and go into it:
+Quick and easy to compile. Clone the repo and go into it:
 
 ```sh
 git clone https://github.com/digital-diplomat/CharTools.git
