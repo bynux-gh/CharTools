@@ -9,7 +9,7 @@ the future.
 
 #### From Releases
 
-You can download the straight jarfile for use with in
+You can download the straight jarfile in
 [releases](https://github.com/digital-diplomat/CharTools/releases). Or, if you're
 feeling particularly picky, you can build it from source
 
