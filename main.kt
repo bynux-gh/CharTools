@@ -25,15 +25,31 @@ fun main(args: Array<String>) {
     when (opt) {
     
         'd','D' -> {
+            if (args.size >= 2) { // If string is passed, process and quit.
+                try {
+                    println(Hex.decodeHex(args[1]));
+                    System.exit(0);
+                } catch (e: NumberFormatException) {
+                // If user enters invalid string, give error and retry.
+                    println("Please enter valid hexadecimal, and use " +
+                            "only commas and spaces " +
+                            "to separate each value.");
+                    System.exit(2);
+                } catch (e: Exception) {
+                    // If there's some other error, print message and quit w/ error code 1.
+                    System.err.println("An unknown error has occurred.");
+                    System.exit(1);
+                }
+            }
             println("Enter HEX string to decode."); // Decode from HEX
             print("Separate values with commas and/or spaces.\n> ");
             try {
-                println("= " + Hex.decodeHex(readLine().orEmpty()) + "\n");
+                println("= " + Hex.decodeHex(readLine().orEmpty()));
             } catch (e: NumberFormatException) {
                 // If user enters invalid string, give error and retry.
                 println("Please enter valid hexadecimal, and use " +
                         "only commas and spaces " +
-                        "to separate each value.\n");
+                        "to separate each value.");
             } catch (e: Exception) {
                 // If there's some other error, print message and quit w/ error code 1.
                 System.err.println("An unknown error has occurred.");
@@ -42,12 +58,22 @@ fun main(args: Array<String>) {
         }
     
         'e','E' -> { // Encode to HEX
+            if (args.size >= 2) { // If string is passed, process and quit.
+                try {
+                    println(Hex.encodeHex(args[1]));
+                    System.exit(0);
+                } catch (e: Exception) {
+                    // If there's some other error, print message and quit w/ error code 1.
+                    System.err.println("An unknown error has occurred.");
+                    System.exit(1);
+                }
+            }
             print("Enter string to encode.\n> ");
-            println("= " + Hex.encodeHex(readLine().orEmpty()) + "\n");
+            println("= " + Hex.encodeHex(readLine().orEmpty()));
         }
 
         'f','F' -> { // Press F to pay respects.
-            println("Respects have been paid.\n");
+            println("Respects have been paid.");
         }
         
         't','T' -> {
@@ -60,13 +86,14 @@ fun main(args: Array<String>) {
         }
 
         else -> { // If other selection is made,
-            System.err.println("Please enter a valid command.\n"); // give error message.
+            System.err.println("Please enter a valid command."); // give error message.
         }
         
     }
     
     // Finally, loop program if interactive, quit otherwise.
     if (args.isEmpty()) {
+        println();
         main(emptyArray<String>());
     } else {
         System.exit(0);
